@@ -15,7 +15,9 @@ import {
   ListItemText,
   Paper,
   Tabs,
-  Tab
+  Tab,
+  Icon,
+  Link
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -25,6 +27,9 @@ import {
   Assignment,
   LocationOn,
   More,
+  KeyboardArrowRight,
+  MoreVert,
+  ArrowBack
 } from '@material-ui/icons';
 
 export {
@@ -48,5 +53,10 @@ export {
   ListItemText,
   Paper,
   Tabs,
-  Tab
+  Tab,
+  KeyboardArrowRight,
+  Icon,
+  Link,
+  MoreVert,
+  ArrowBack
 };

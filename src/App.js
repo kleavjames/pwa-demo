@@ -1,37 +1,54 @@
 import React, { Component } from 'react';
 import { withStyles } from './materialUI';
+import { Route, Redirect } from 'react-router-dom';
 
 import TopDrawer from './components/UI/TopDrawer';
 import BottomDrawer from './components/UI/BottomDrawer';
 import SideDrawer from './components/UI/SideDrawer';
-import SecondaryTab from './components/UI/SecondaryTab';
+import BookingList from './components/BookingList';
+import Location from './components/Location';
+import MoreSettings from './components/MoreSettings';
+import BookingDetail from './components/BookingDetail';
 
 class App extends Component {
   state = {
-    drawer: false,
-    appBarTitle: 'Bookings'
+    drawer: false
   }
 
   toggleSideDrawer = () => {
     this.setState(prevState => ({ drawer: !prevState.drawer }));
   }
 
-  setAppbarTitle = title => {
-    this.setState({ appBarTitle: title })
-  }
-
   render() {
+
     return (
       <div className={this.props.classes.container}>
         <SideDrawer
           sideDrawer={this.state.drawer}
           toggleSideDrawer={this.toggleSideDrawer} />
         <TopDrawer
-          appBarTitle={this.state.appBarTitle}
           toggleSideDrawer={this.toggleSideDrawer} />
-        <SecondaryTab />
-        <BottomDrawer
-          setAppbarTitle={(title) => this.setAppbarTitle(title)} />
+        <Route
+          path='/bookings'
+          exact
+          component={BookingList} />
+        <Route
+          path='/bookings/:id'
+          exact
+          component={BookingDetail} />
+        <Route
+          path='/location' 
+          exact 
+          component={Location} />
+        <Route 
+          path='/settings'
+          exact 
+          component={MoreSettings} />
+        <Route 
+          path='/' 
+          exact 
+          render={() => <Redirect to='/bookings' />} />
+        <BottomDrawer />
       </div>
     );
   }

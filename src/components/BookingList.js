@@ -4,11 +4,11 @@ import {
   Paper,
   Tabs,
   Tab
-} from '../../materialUI';
-import PastBooking from '../PastBooking';
-import CurrentBooking from '../CurrentBooking';
+} from '../materialUI';
+import PastBooking from './PastBooking';
+import CurrentBooking from './CurrentBooking';
 
-class SecondaryTab extends Component {
+class BookingList extends Component {
   state = {
     tab: 0
   }
@@ -54,4 +54,4 @@ const styles = {
   }
 }
 
-export default withStyles(styles)(SecondaryTab);
+export default withStyles(styles)(BookingList);

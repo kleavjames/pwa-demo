@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import {
   withStyles,
   Paper,
   List,
   ListItem,
   Divider,
-  Typography
+  Typography,
+  Icon,
+  KeyboardArrowRight
 } from '../materialUI'
 
 const PAST_BOOKINGS = [
-  { date: 'Aug 4, 2017 (Fri)', area: 'Main Campus', room: 'Room 1', time: '13:00 - 13:30' },
-  { date: 'Sept 16, 2017 (Mon)', area: 'Main Campus', room: 'Room 3', time: '15:00 - 16:00' },
-  { date: 'Dec 1, 2017 (Sat)', area: 'Dormitory', room: 'Room 5', time: '08:00 - 09:30' },
+  { id: 4, date: 'Aug 4, 2017 (Fri)', area: 'Main Campus', room: 'Room 1', time: '13:00 - 13:30' },
+  { id: 5, date: 'Sept 16, 2017 (Mon)', area: 'Main Campus', room: 'Room 3', time: '15:00 - 16:00' },
+  { id: 6, date: 'Dec 1, 2017 (Sat)', area: 'Dormitory', room: 'Room 5', time: '08:00 - 09:30' },
 ];
 
 
@@ -24,7 +27,10 @@ class PastBooking extends Component {
         <List component='div' className={classes.list}>
           {PAST_BOOKINGS.map(booking => (
             <div key={booking.date}>
-              <ListItem className={classes.listItem}>
+              <ListItem
+                className={classes.listItem}
+                component={Link}
+                to={`/bookings/${booking.id}`}>
                 <div className={classes.root}>
                   <Paper square elevation={0} className={classes.date}>
                     <Typography component="h4">
@@ -32,14 +38,22 @@ class PastBooking extends Component {
                     </Typography>
                   </Paper>
                   <Divider />
-                  <Paper square elevation={0} className={classes.room}>
-                    <Typography variant="h5" component="h3">
-                      {booking.area} - {booking.room}
-                    </Typography>
-                    <Typography component="p">
-                      {booking.time}
-                    </Typography>
-                  </Paper>
+                  <div className={classes.room}>
+                    <Paper square elevation={0}>
+                      <Typography variant="h5" component="h3">
+                        {booking.area} - {booking.room}
+                      </Typography>
+                      <Typography component="p">
+                        {booking.time}
+                      </Typography>
+                    </Paper>
+                    <Icon
+                      className={classes.icon}
+                      color="inherit"
+                      aria-label="Arrow Right">
+                      <KeyboardArrowRight />
+                    </Icon>
+                  </div>
                   <Divider />
                 </div>
               </ListItem>
@@ -67,8 +81,13 @@ const styles = {
     background: '#f1f3f4',
   },
   room: {
+    display: 'flex',
     flexGrow: 1,
-    padding: '10px 20px',
+    alignItems: 'center',
+    padding: '15px 20px',
+  },
+  icon: {
+    marginLeft: 'auto'
   }
 }
 

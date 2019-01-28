@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import {
   BottomNavigation,
   BottomNavigationAction,
@@ -10,23 +11,11 @@ import {
 
 class BottomDrawer extends Component {
   state = {
-    value: 0
+    value: 'Bookings'
   }
 
   setBottomDrawer = (event, newValue) => {
     this.setState({ value: newValue})
-
-    if (newValue === 0) {
-      this.props.setAppbarTitle('Bookings')
-    }
-
-    if (newValue === 1) {
-      this.props.setAppbarTitle('Locations')
-    }
-
-    if (newValue === 2) {
-      this.props.setAppbarTitle('More')
-    }
   }
 
   render() {
@@ -39,9 +28,24 @@ class BottomDrawer extends Component {
           onChange={this.setBottomDrawer}
           showLabels
           className={classes.root}>
-          <BottomNavigationAction label="Bookings" icon={<Assignment />} />
-          <BottomNavigationAction label="Locations" icon={<LocationOn />} />
-          <BottomNavigationAction label="More" icon={<More />} />
+          <BottomNavigationAction
+            component={Link}
+            to='/bookings'
+            label="Bookings"
+            value='Bookings'
+            icon={<Assignment />} />
+          <BottomNavigationAction
+            component={Link}
+            to='/location'
+            label="Location"
+            value='Location'
+            icon={<LocationOn />} />
+          <BottomNavigationAction
+            component={Link}
+            to='/settings'
+            label="More"
+            value='More'
+            icon={<More />} />
         </BottomNavigation>
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import {
   withStyles,
   Drawer,
@@ -13,9 +14,9 @@ import {
 } from '../../materialUI';
 
 const ITEM_LIST = [
-  'Bookings',
-  'Location',
-  'More'
+  { loc: 'Bookings', to: '/bookings' },
+  { loc: 'Location', to: '/location' },
+  { loc: 'More', to: '/settings' }
 ]
 
 class SideDrawer extends Component {
@@ -47,9 +48,9 @@ class SideDrawer extends Component {
         <Divider />
         <List>
           {ITEM_LIST.map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button component={Link} key={text.loc} to={text.to}>
               <ListItemIcon>{this.listIcon(index)}</ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text.loc} />
             </ListItem>
           ))}
         </List>
