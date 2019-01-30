@@ -22,7 +22,7 @@ class BottomDrawer extends Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.test}>
+      <div>
         <BottomNavigation
           value={this.state.value}
           onChange={this.setBottomDrawer}

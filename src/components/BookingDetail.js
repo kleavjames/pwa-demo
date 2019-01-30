@@ -28,7 +28,7 @@ class BookingDetail extends Component {
           <Typography component="p">
             Location
           </Typography>
-          <Typography variant='p' component="p" className={classes.detail}>
+          <Typography variant='subtitle1' component="p" className={classes.detail}>
             {selectedBook.area}
           </Typography>
         </Paper>
@@ -37,7 +37,7 @@ class BookingDetail extends Component {
           <Typography component="p">
             Room
           </Typography>
-          <Typography variant='p' component="p" className={classes.detail}>
+          <Typography variant='subtitle1' component="p" className={classes.detail}>
             {selectedBook.room}
           </Typography>
         </Paper>
@@ -46,7 +46,7 @@ class BookingDetail extends Component {
           <Typography component="p">
             Date
           </Typography>
-          <Typography variant='p' component="p" className={classes.detail}>
+          <Typography variant='subtitle1' component="p" className={classes.detail}>
             {selectedBook.date}
           </Typography>
         </Paper>
@@ -55,7 +55,7 @@ class BookingDetail extends Component {
           <Typography component="p">
             Timeslot
           </Typography>
-          <Typography variant='p' component="p" className={classes.detail}>
+          <Typography variant='subtitle1' component="p" className={classes.detail}>
             {selectedBook.time}
           </Typography>
         </Paper>

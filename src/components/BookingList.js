@@ -41,8 +41,9 @@ const styles = {
     flexGrow: 1
   },
   root: {
-    position: 'relative',
-    zIndex: 100
+    position: 'sticky',
+    top: 0,
+    zIndex: 50
   },
   tabRoot: {
     flexGrow: 1,

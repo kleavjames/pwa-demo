@@ -33,17 +33,17 @@ class PastBooking extends Component {
                 to={`/bookings/${booking.id}`}>
                 <div className={classes.root}>
                   <Paper square elevation={0} className={classes.date}>
-                    <Typography component="h4">
+                    <Typography variant="body1" component="span">
                       {booking.date}
                     </Typography>
                   </Paper>
                   <Divider />
                   <div className={classes.room}>
                     <Paper square elevation={0}>
-                      <Typography variant="p" component="p">
+                      <Typography variant="subtitle1" component="span">
                         {booking.area} - {booking.room}
                       </Typography>
-                      <Typography component="p">
+                      <Typography variant="caption" component="span">
                         {booking.time}
                       </Typography>
                     </Paper>

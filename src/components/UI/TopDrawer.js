@@ -17,7 +17,6 @@ class TopDrawer extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { classes, toggleSideDrawer, location, history } = this.props;
     let appbarTitle = '';
     let renderIcon = (
@@ -57,7 +56,7 @@ class TopDrawer extends Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="sticky">
           <Toolbar>
             {renderIcon}
             <Typography variant="h6" color="inherit" className={classes.grow}>
