@@ -54,6 +54,9 @@ class BottomDrawer extends Component {
 
 const styles = {
   root: {
+    position: 'fixed',
+    bottom: 0,
+    width: 100 + '%',
     background: '#F7F8FA',
     border: '1px solid #DEDFE0',
     borderLeft: 'none',

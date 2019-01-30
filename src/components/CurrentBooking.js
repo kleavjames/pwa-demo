@@ -40,7 +40,7 @@ class CurrentBooking extends Component {
                   <Divider />
                   <div className={classes.room}>
                     <Paper square elevation={0}>
-                      <Typography variant="h5" component="h3">
+                      <Typography variant="p" component="p">
                         {booking.area} - {booking.room}
                       </Typography>
                       <Typography component="p">
