@@ -36,14 +36,17 @@ class BookingList extends Component {
   }
 }
 
-const styles = {
+const styles = theme => ({
   container: {
     flexGrow: 1
   },
   root: {
     position: 'sticky',
-    top: 0,
-    zIndex: 50
+    top: 56,
+    zIndex: 50,
+    [theme.breakpoints.up('sm')]: {
+      top: 64
+    }
   },
   tabRoot: {
     flexGrow: 1,
@@ -53,6 +56,6 @@ const styles = {
     flexGrow: 1,
     margin: 'auto',
   }
-}
+});
 
 export default withStyles(styles)(BookingList);

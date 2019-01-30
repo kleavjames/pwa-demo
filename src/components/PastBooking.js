@@ -9,23 +9,18 @@ import {
   Typography,
   Icon,
   KeyboardArrowRight
-} from '../materialUI'
-
-const PAST_BOOKINGS = [
-  { id: 4, date: 'Aug 4, 2017 (Fri)', area: 'Main Campus', room: 'Room 1', time: '13:00 - 13:30' },
-  { id: 5, date: 'Sept 16, 2017 (Mon)', area: 'Main Campus', room: 'Room 3', time: '15:00 - 16:00' },
-  { id: 6, date: 'Dec 1, 2017 (Sat)', area: 'Dormitory', room: 'Room 5', time: '08:00 - 09:30' },
-];
-
+} from '../materialUI';
+import bookingData from '../data/booking.json';
 
 class PastBooking extends Component {
   render() {
+    const bookings = bookingData.filter(book => book.active === false);
     const { classes } = this.props;
 
     return (
       <div className={classes.root}>
         <List component='div' className={classes.list}>
-          {PAST_BOOKINGS.map(booking => (
+          {bookings.map(booking => (
             <div key={booking.date}>
               <ListItem
                 className={classes.listItem}

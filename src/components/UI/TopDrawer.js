@@ -78,6 +78,11 @@ class TopDrawer extends Component {
 }
 
 const styles = {
+  root: {
+    position: 'sticky',
+    top: 0,
+    zIndex: 100
+  },
   grow: {
     flexGrow: 1,
   },

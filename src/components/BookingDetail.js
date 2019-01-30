@@ -6,21 +6,12 @@ import {
   Divider,
   Typography,
 } from '../materialUI';
-
-const BOOKING_DETAIL = [
-  { id: 1, date: 'Jun 13, 2019 (Thu)', area: 'Main Campus', room: 'Room 50', time: '13:00 - 13:30' },
-  { id: 2, date: 'Aug 4, 2019 (Wed)', area: 'Main Campus', room: 'Room 3', time: '12:45 - 14:05' },
-  { id: 3, date: 'Aug 20, 2019 (Mon)', area: 'Function Hall', room: 'Room 1', time: '10:00 - 13:00' },
-  { id: 4, date: 'Aug 4, 2017 (Fri)', area: 'Main Campus', room: 'Room 1', time: '13:00 - 13:30' },
-  { id: 5, date: 'Sept 16, 2017 (Mon)', area: 'Main Campus', room: 'Room 3', time: '15:00 - 16:00' },
-  { id: 6, date: 'Dec 1, 2017 (Sat)', area: 'Dormitory', room: 'Room 5', time: '08:00 - 09:30' },
-];
-
+import bookingData from '../data/booking.json';
 
 class BookingDetail extends Component {
   render() {
     const { classes, match } = this.props;
-    const selectedBook = BOOKING_DETAIL.find(book => book.id === +match.params.id);
+    const selectedBook = bookingData.find(book => book.id === +match.params.id);
 
     return (
       <div className={classes.root}>
