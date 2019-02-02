@@ -17,7 +17,10 @@ import {
   Tabs,
   Tab,
   Icon,
-  Link
+  Link,
+  Slide,
+  Switch,
+  Modal
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -58,5 +61,8 @@ export {
   Icon,
   Link,
   MoreVert,
-  ArrowBack
+  ArrowBack,
+  Slide,
+  Switch,
+  Modal
 };

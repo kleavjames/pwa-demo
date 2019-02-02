@@ -46,8 +46,8 @@ class TopDrawer extends Component {
       appbarTitle = 'Bookings';
     }
 
-    if (location.pathname === '/location') {
-      appbarTitle = 'Location';
+    if (location.pathname === '/locations') {
+      appbarTitle = 'Locations';
     }
 
     if (location.pathname === '/settings') {
@@ -79,8 +79,10 @@ class TopDrawer extends Component {
 
 const styles = {
   root: {
-    position: 'sticky',
+    position: 'fixed',
+    width: 100 + '%',
     top: 0,
+    left: 0,
     zIndex: 100
   },
   grow: {

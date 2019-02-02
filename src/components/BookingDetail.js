@@ -59,7 +59,9 @@ class BookingDetail extends Component {
 
 const styles = {
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    position: 'relative',
+    top: 55
   },
   item: {
     display: 'flex',

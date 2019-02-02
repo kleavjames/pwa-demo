@@ -5,7 +5,7 @@ import {
 } from '../materialUI'
 
 
-class Location extends Component {
+class Locations extends Component {
   render() {
     const { classes } = this.props;
 
@@ -24,8 +24,10 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    flexGrow: 1
+    flexGrow: 1,
+    width: 100 + '%',
+    height: 100 + 'vh'
   }
 }
 
-export default withStyles(styles)(Location);
+export default withStyles(styles)(Locations);

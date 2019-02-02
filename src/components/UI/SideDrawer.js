@@ -15,12 +15,12 @@ import {
 
 const ITEM_LIST = [
   { loc: 'Bookings', to: '/bookings' },
-  { loc: 'Location', to: '/location' },
+  { loc: 'Locations', to: '/locations' },
   { loc: 'More', to: '/settings' }
 ]
 
 class SideDrawer extends Component {
-
+  
   listIcon = index => {
     switch(index) {
       case 0:
